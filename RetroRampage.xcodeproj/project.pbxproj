@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B59582932397F95E006A3867 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59582922397F95E006A3867 /* Tile.swift */; };
+		B59582952397F976006A3867 /* Tilemap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59582942397F976006A3867 /* Tilemap.swift */; };
+		B59582972397FAD3006A3867 /* Map.json in Resources */ = {isa = PBXBuildFile; fileRef = B59582962397FAD3006A3867 /* Map.json */; };
+		B59582992397FD14006A3867 /* Thing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59582982397FD14006A3867 /* Thing.swift */; };
+		B595829B2397FEF2006A3867 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = B595829A2397FEF2006A3867 /* Input.swift */; };
+		B595829D23980104006A3867 /* JoystickDebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B595829C23980104006A3867 /* JoystickDebugView.swift */; };
 		B5A8D5B12396A442003827BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A8D5B02396A442003827BC /* AppDelegate.swift */; };
 		B5A8D5B32396A442003827BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A8D5B22396A442003827BC /* SceneDelegate.swift */; };
 		B5A8D5B52396A442003827BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A8D5B42396A442003827BC /* ViewController.swift */; };
@@ -23,7 +29,7 @@
 		B5A8D5DF2396A8D9003827BC /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A8D5DE2396A8D9003827BC /* Vector.swift */; };
 		B5A8D5E12396A906003827BC /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A8D5E02396A906003827BC /* Player.swift */; };
 		B5A8D5E32396AA7F003827BC /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A8D5E22396AA7F003827BC /* World.swift */; };
-		B5A8D5E52396AB2F003827BC /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A8D5E42396AB2F003827BC /* Rectangle.swift */; };
+		B5A8D5E52396AB2F003827BC /* Rect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A8D5E42396AB2F003827BC /* Rect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B59582922397F95E006A3867 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		B59582942397F976006A3867 /* Tilemap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tilemap.swift; sourceTree = "<group>"; };
+		B59582962397FAD3006A3867 /* Map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Map.json; sourceTree = "<group>"; };
+		B59582982397FD14006A3867 /* Thing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thing.swift; sourceTree = "<group>"; };
+		B595829A2397FEF2006A3867 /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
+		B595829C23980104006A3867 /* JoystickDebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoystickDebugView.swift; sourceTree = "<group>"; };
 		B5A8D5AD2396A442003827BC /* RetroRampage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RetroRampage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5A8D5B02396A442003827BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5A8D5B22396A442003827BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,7 +81,7 @@
 		B5A8D5DE2396A8D9003827BC /* Vector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		B5A8D5E02396A906003827BC /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		B5A8D5E22396AA7F003827BC /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
-		B5A8D5E42396AB2F003827BC /* Rectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
+		B5A8D5E42396AB2F003827BC /* Rect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +132,8 @@
 				B5A8D5B92396A443003827BC /* Assets.xcassets */,
 				B5A8D5BB2396A443003827BC /* LaunchScreen.storyboard */,
 				B5A8D5BE2396A443003827BC /* Info.plist */,
+				B59582962397FAD3006A3867 /* Map.json */,
+				B595829C23980104006A3867 /* JoystickDebugView.swift */,
 			);
 			path = RetroRampage;
 			sourceTree = "<group>";
@@ -135,7 +149,11 @@
 				B5A8D5DE2396A8D9003827BC /* Vector.swift */,
 				B5A8D5E02396A906003827BC /* Player.swift */,
 				B5A8D5E22396AA7F003827BC /* World.swift */,
-				B5A8D5E42396AB2F003827BC /* Rectangle.swift */,
+				B5A8D5E42396AB2F003827BC /* Rect.swift */,
+				B59582922397F95E006A3867 /* Tile.swift */,
+				B59582942397F976006A3867 /* Tilemap.swift */,
+				B59582982397FD14006A3867 /* Thing.swift */,
+				B595829A2397FEF2006A3867 /* Input.swift */,
 			);
 			path = Engine;
 			sourceTree = "<group>";
@@ -236,6 +254,7 @@
 			files = (
 				B5A8D5BD2396A443003827BC /* LaunchScreen.storyboard in Resources */,
 				B5A8D5BA2396A443003827BC /* Assets.xcassets in Resources */,
+				B59582972397FAD3006A3867 /* Map.json in Resources */,
 				B5A8D5B82396A442003827BC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +277,7 @@
 				B5A8D5B52396A442003827BC /* ViewController.swift in Sources */,
 				B5A8D5B12396A442003827BC /* AppDelegate.swift in Sources */,
 				B5A8D5B32396A442003827BC /* SceneDelegate.swift in Sources */,
+				B595829D23980104006A3867 /* JoystickDebugView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,10 +288,14 @@
 				B5A8D5D92396A514003827BC /* Bitmap.swift in Sources */,
 				B5A8D5DD2396A814003827BC /* Renderer.swift in Sources */,
 				B5A8D5DF2396A8D9003827BC /* Vector.swift in Sources */,
+				B595829B2397FEF2006A3867 /* Input.swift in Sources */,
+				B59582932397F95E006A3867 /* Tile.swift in Sources */,
 				B5A8D5E12396A906003827BC /* Player.swift in Sources */,
 				B5A8D5D72396A4E4003827BC /* Color.swift in Sources */,
 				B5A8D5E32396AA7F003827BC /* World.swift in Sources */,
-				B5A8D5E52396AB2F003827BC /* Rectangle.swift in Sources */,
+				B59582952397F976006A3867 /* Tilemap.swift in Sources */,
+				B59582992397FD14006A3867 /* Thing.swift in Sources */,
+				B5A8D5E52396AB2F003827BC /* Rect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
