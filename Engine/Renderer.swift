@@ -31,10 +31,33 @@ public extension Renderer {
             }
         }
 
+        // draw view plane
+        let focalLength = 1.0
+        let viewWidth = 1.0
+        let viewPlane = world.player.direction.orthogonal * viewWidth
+        let viewCenter = world.player.position + world.player.direction * focalLength
+        let viewStart = viewCenter - viewPlane/2
+        let viewEnd = viewCenter + viewPlane/2
+        bitmap.drawLine(from: viewStart * scale, to: viewEnd * scale, color: .red)
+
         // draw player
         var rect = world.player.rect
         rect.min *= scale
         rect.max *= scale
         bitmap.fill(rect: rect, color: .blue)
+
+        // draw line of sight
+        let columns = 10
+        let step = viewPlane / Double(columns)
+        var columnPosition = viewStart
+        for _ in 0 ..< columns {
+            let rayDirection = columnPosition - world.player.position
+            let viewPlaneDistance = rayDirection.length
+            let ray = Ray(origin: world.player.position, direction: rayDirection / viewPlaneDistance)
+
+            let end = world.map.hitTest(ray)
+            bitmap.drawLine(from: world.player.position * scale, to: end * scale, color: .green)
+            columnPosition += step
+        }
     }
 }

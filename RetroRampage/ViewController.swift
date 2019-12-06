@@ -94,7 +94,12 @@ class ViewController: UIViewController {
     @objc
     func update(_ displayLink: CADisplayLink) {
 
-        let input = Input(velocity: inputVector)
+        let inputVector = self.inputVector
+        let rotation = inputVector.x * world.player.turningSpeed * worldTimeStep
+        let input = Input(
+            speed: -inputVector.y,
+            rotation: Rotation(sine: sin(rotation), cosine: cos(rotation))
+            )
         let timeStep = displayLink.timestamp - lastFrameTime
         let worldSteps = (timeStep / worldTimeStep).rounded(.up)
         for _ in 0 ..< Int(worldSteps) {

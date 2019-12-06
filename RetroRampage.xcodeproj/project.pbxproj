@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B51EDFCB239A9D2400642FC5 /* Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EDFCA239A9D2400642FC5 /* Rotation.swift */; };
+		B560CA91239961E800B07216 /* Ray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B560CA90239961E800B07216 /* Ray.swift */; };
 		B59582932397F95E006A3867 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59582922397F95E006A3867 /* Tile.swift */; };
 		B59582952397F976006A3867 /* Tilemap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59582942397F976006A3867 /* Tilemap.swift */; };
 		B59582972397FAD3006A3867 /* Map.json in Resources */ = {isa = PBXBuildFile; fileRef = B59582962397FAD3006A3867 /* Map.json */; };
@@ -57,6 +59,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B51EDFCA239A9D2400642FC5 /* Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotation.swift; sourceTree = "<group>"; };
+		B560CA90239961E800B07216 /* Ray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ray.swift; sourceTree = "<group>"; };
 		B59582922397F95E006A3867 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		B59582942397F976006A3867 /* Tilemap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tilemap.swift; sourceTree = "<group>"; };
 		B59582962397FAD3006A3867 /* Map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Map.json; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 				B59582942397F976006A3867 /* Tilemap.swift */,
 				B59582982397FD14006A3867 /* Thing.swift */,
 				B595829A2397FEF2006A3867 /* Input.swift */,
+				B560CA90239961E800B07216 /* Ray.swift */,
+				B51EDFCA239A9D2400642FC5 /* Rotation.swift */,
 			);
 			path = Engine;
 			sourceTree = "<group>";
@@ -293,6 +299,8 @@
 				B5A8D5E12396A906003827BC /* Player.swift in Sources */,
 				B5A8D5D72396A4E4003827BC /* Color.swift in Sources */,
 				B5A8D5E32396AA7F003827BC /* World.swift in Sources */,
+				B51EDFCB239A9D2400642FC5 /* Rotation.swift in Sources */,
+				B560CA91239961E800B07216 /* Ray.swift in Sources */,
 				B59582952397F976006A3867 /* Tilemap.swift in Sources */,
 				B59582992397FD14006A3867 /* Thing.swift in Sources */,
 				B5A8D5E52396AB2F003827BC /* Rect.swift in Sources */,
