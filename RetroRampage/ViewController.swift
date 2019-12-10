@@ -13,6 +13,7 @@ class ViewController: UIViewController {
 
     private let imageView = UIImageView()
     private lazy var world = World(map: loadMap())
+    private lazy var textures = loadTextures()
     private var lastFrameTime = CACurrentMediaTime()
     private let panGesture = UIPanGestureRecognizer()
     private let joystickRadius: Double = 40
@@ -91,6 +92,12 @@ class ViewController: UIViewController {
         return try! JSONDecoder().decode(Tilemap.self, from: jsonData)
     }
 
+    private func loadTextures() -> Textures {
+        return Textures(loader: { name in
+            Bitmap(image: UIImage(named: name)!)!
+        })
+    }
+
     @objc
     func update(_ displayLink: CADisplayLink) {
         let inputVector = self.inputVector
@@ -107,7 +114,7 @@ class ViewController: UIViewController {
 
         let width = Int(imageView.bounds.width)
         let height = Int(imageView.bounds.height)
-        var renderer = Renderer(width: width, height: height)
+        var renderer = Renderer(width: width, height: height, textures: textures)
         renderer.draw(world)
         imageView.image = UIImage(bitmap: renderer.bitmap)
 
