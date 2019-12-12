@@ -27,6 +27,15 @@ public extension Renderer {
         let columns = bitmap.width
         let step = viewPlane / Double(columns)
         var columnPosition = viewStart
+
+        // sort sprites by distance
+        var spritesByDistance: [(distance: Double, sprite: Billboard)] = []
+        for sprite in world.sprites {
+            let spriteDistance = (sprite.start - world.player.position).length
+            spritesByDistance.append((spriteDistance, sprite))
+        }
+        spritesByDistance.sort(by: { $0.distance > $1.distance })
+
         for x in 0 ..< columns {
             let rayDirection = columnPosition - world.player.position
             let viewPlaneDistance = rayDirection.length
@@ -79,6 +88,22 @@ public extension Renderer {
                 bitmap[x, bitmap.height - y] = ceilingTexture[normalized: textureX, textureY]
             }
 
+            // draw sprites
+            for (_, sprite) in spritesByDistance {
+                guard let hit = sprite.hitTest(ray) else { continue }
+                let spriteDistance = (hit - ray.origin).length
+                if spriteDistance > wallDistance {
+                    continue
+                }
+                let perpendicular = spriteDistance / distanceRatio
+                let height = wallHeight / perpendicular * Double(bitmap.height)
+
+                let spriteX = (hit - sprite.start).length / sprite.length
+                let spriteTexture = textures[.monster]
+                let textureX = min(Int(spriteX * Double(spriteTexture.width)), spriteTexture.width - 1)
+                let start = Vector(x: Double(x), y: (Double(bitmap.height) - height)/2 + 0.001)
+                bitmap.drawColumn(textureX, of: spriteTexture, at: start, height: height)
+            }
 
             columnPosition += step
         }
@@ -124,7 +149,20 @@ public extension Renderer {
                 origin: world.player.position,
                 direction: rayDirection / viewPlaneDistance
             )
-            let end = world.map.hitTest(ray)
+            var end = world.map.hitTest(ray)
+
+            // see if we intersect any sprites and stop there instead
+            for sprite in world.sprites {
+                guard let hit = sprite.hitTest(ray) else {
+                    continue
+                }
+                let spriteDistance = (hit - ray.origin).length
+                if spriteDistance > (end - ray.origin).length {
+                    continue
+                }
+                end = hit
+            }
+
             bitmap.drawLine(from: ray.origin * scale, to: end * scale, color: .green)
             columnPosition += step
         }

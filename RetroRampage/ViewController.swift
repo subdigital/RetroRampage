@@ -115,8 +115,8 @@ class ViewController: UIViewController {
         let width = Int(imageView.bounds.width)
         let height = Int(imageView.bounds.height)
         var renderer = Renderer(width: width, height: height, textures: textures)
-        renderer.draw2d(world)
-//        renderer.draw(world)
+//        renderer.draw2d(world)
+        renderer.draw(world)
         imageView.image = UIImage(bitmap: renderer.bitmap)
 
         lastFrameTime = displayLink.timestamp
